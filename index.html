@@ -1,0 +1,343 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Columbia University EECS E4764 IoT Project Report #0</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<!-- <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span> -->
+							<h1 id="title">ColorSense</h1>
+							<p>Columbia University <br>
+								EECS E4764 Fall'24 Internet of Things<br>
+								Intelligent and Connected Systems<br>
+								Team 6 Project Report
+							</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Abstract</span></a></li>
+								<li><a href="#motivation" id="motivation-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Motivation</span></a></li>
+								<li><a href="#system" id="system-link" class="skel-layers-ignoreHref"><span class="icon fa-th">System</span></a></li>
+								<li><a href="#results" id="results-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Results</span></a></li>
+								<li><a href="#references" id="references-link" class="skel-layers-ignoreHref"><span class="icon fa-th">References</span></a></li>
+								<li><a href="#team" id="team-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Our Team</span></a></li>
+								<li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/_AlcRoqS65E" frameborder="0" allowfullscreen></iframe>
+
+								<h2 class="alt">ColorSense</h2>
+								<p>Real-time portable color recognition helper</p>
+								<p>Detects object the user pointing at and voice commands and provide real-time feedback of the color of the target..</p>
+
+
+							<footer>
+								<a href="#motivation" class="button scrolly">Motivation</a>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="motivation" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Motivation</h2>
+							</header>
+
+							<p align="left">Color blindness is a common condition affecting approximately 1 in 12 men and 1 in 200 women worldwide, making everyday tasks that require color differentiation—such as selecting clothing, reading color-coded charts, or identifying traffic signals—significantly more challenging. These obstacles can hinder professional opportunities, daily productivity, and even safety in certain situations.</p>
+
+							<p align="left">With ColorSense, we aim to bridge this gap by empowering individuals with a reliable and intuitive solution for real-time color recognition. By leveraging advanced technologies like object detection, gesture recognition, and voice commands, ColorSense provides users the ability to confidently tackle color-related tasks, enhancing their independence and improving their quality of life.</p>
+						</div>
+					</section>
+
+
+					<section id="system" class="three">
+						<div class="container">
+
+							<header>
+								<h2>System</h2>
+							</header>
+
+							<p align="left">Remember to use combination of descriptions, photos, and figures</p>
+							
+							<h3 align="left">Architecture</h3>
+							<p align="left">
+								The system adopts a distributed architecture composed of hardware modules and server-side functionalities, working collaboratively to perform color and object identification tasks.
+							</p>
+					
+							<p align="left">
+								<strong>1. Hardware Module:</strong><br>
+								The hardware module includes a <strong>microphone</strong>, <strong>camera</strong>, <strong>LED</strong>, and <strong>speaker</strong>, all controlled via a central board (e.g., Raspberry Pi or similar embedded device). The microphone captures user voice commands, the camera takes environmental pictures, the LED provides visual color feedback, and the speaker delivers voice output.
+							</p>
+					
+							<p align="left">
+								<strong>2. WiFi Communication:</strong><br>
+								The hardware module communicates with the server via WiFi. Captured images and voice data are sent to the server, while processed identification results are sent back for user interaction.
+							</p>
+					
+							<p align="left">
+								<strong>3. Server-Side:</strong><br>
+								The server performs the core processing and includes the following components:
+								<ul>
+									<li><strong>Vosk:</strong> Converts voice data into text for parsing user commands.</li>
+									<li><strong>YOLO:</strong> Identifies target objects in the images.</li>
+									<li><strong>MediaPipe:</strong> Detects gestures to assist user interactions.</li>
+									<li><strong>Color & Object Identification Module:</strong> Combines YOLO and gesture information to provide color detection and object identification results.</li>
+								</ul>
+								The server ensures real-time processing and seamless interaction between the user and the device.
+							</p>
+					
+							<p align="left">
+								This architecture enables real-time color recognition and object detection, offering an effective solution for color-blind users.
+							</p>
+					
+							<!-- Architecture Image -->
+							<div align="center">
+								<img src="images/workflow.png" alt="System Architecture Diagram" style="max-width: 100%; height: auto;" />
+								<p><em>Figure: System Architecture Diagram</em></p>
+							</div>
+							
+							<h3 align="left">Technical Components</h3>
+							<p align="left">
+								The hardware module of the system includes the following key components:
+							</p>
+							
+							<!-- Technical Components Images -->
+							<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+							
+								<!-- Raspberry Pi Zero 2 W -->
+								<div style="flex: 1; text-align: center; min-width: 200px;">
+									<img src="images/raspberry.png" alt="Raspberry Pi Zero 2 W" style="width: 100%; max-width: 250px; height: auto;" />
+									<p><strong>Raspberry Pi Zero 2 W</strong></p>
+								</div>
+							
+								<!-- WM860 Audio HAT Module -->
+								<div style="flex: 1; text-align: center; min-width: 200px;">
+									<img src="images/HAT.png" alt="WM8960 Audio HAT Module" style="width: 100%; max-width: 250px; height: auto;" />
+									<p><strong>WM8960 Audio HAT Module</strong></p>
+								</div>
+							
+								<!-- Arducam Camera Module -->
+								<div style="flex: 1; text-align: center; min-width: 200px;">
+									<img src="images/camera.png" alt="Arducam IMX219 Camera Module" style="width: 100%; max-width: 250px; height: auto;" />
+									<p><strong>Arducam IM219 Camera Module</strong></p>
+								</div>
+					
+							</div>
+							
+
+
+							<h3 align="left">Prototype</h3>
+
+							<p align="left">Blah blah blah</p>
+
+
+
+						</div>
+					</section>
+
+
+					<section id="results" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Results</h2>
+							</header>
+
+							<p align="left">ColorSense can successfully work on over 80 kinds of objects, and distinguish between colors that are easy to be confused like light yellow/green.</p>
+							<p align="left">Its performance highly dependent on a silent background of voice input due to limited budget for denoising module.</p>
+
+
+							<article class="item">
+								<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+								<header>
+									<h3>Caption</h3>
+								</header>
+							</article>
+
+
+						</div>
+					</section>
+
+					<section id="references" class="three">
+						<div class="container">
+							<header>
+								<h2>References</h2>
+							</header>
+							<ul>
+								<li><strong>YOLO (You Only Look Once) Object Detection:</strong> <a href="https://docs.ultralytics.com/models/yolo11">https://docs.ultralytics.com/models/yolo11</a></li>
+								<li><strong>Mediapipe Hand Landmark:</strong> <a href="https://mediapipe.readthedocs.io/en/latest/solutions/hands.html">https://mediapipe.readthedocs.io/en/latest/solutions/hands.html</a></li>
+								<li><strong>Vosk Speech Recognition:</strong> <a href="https://alphacephei.com/vosk">https://alphacephei.com/vosk</a></li>
+					
+								<li><strong>Raspberry Pi Zero 2 W:</strong> <a href="https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/">https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/</a></li>
+								<li><strong>WM8960 Audio HAT Module:</strong> <a href="https://www.waveshare.com/wiki/WM8960_Audio_HAT">https://www.waveshare.com/wiki/WM8960_Audio_HAT</a></li>
+								<li><strong>Arducam Camera Module:</strong> <a href="https://www.arducam.com/product/90524/">https://www.arducam.com/product/90524//</a></li>
+							</ul>
+						</div>
+					</section>
+					
+
+
+				<!-- About Me -->
+					<section id="team" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Our Team</h2>
+							</header>
+
+							<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+
+
+							<div class="row">
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/James.jpeg" alt="" /></a>
+										<header>
+											<h3>James Zhang</h3>
+											<p>Hardware</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/norris.jpg" alt="" /></a>
+										<header>
+											<h3>Nuocheng Wang</h3>
+											<p>Server and Voice processing</p>
+										</header>
+									</article>
+								</div>
+								<div class="4u$ 12u$(mobile)">
+									<article class="item">
+										<a href="#" class="image fit"><img src="images/Haotian.jpg" alt="" /></a>
+										<header>
+											<h3>Haotian Zhang</h3>
+											<p>Computer Vision Module</p>
+										</header>
+									</article>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<header>
+								<h2>Contact</h2>
+							</header>
+
+							<p align="left">
+								<strong>James Zhang: </strong>tz2642@columbia.edu</br>
+								<strong>Nuocheng Wang: </strong>nw2568@columbia.edu</br>
+								<strong>Haotian Zhang: </strong>hz2994@columbia.edu</br>
+							</br>
+								<strong>Columbia University </strong><a href="http://www.ee.columbia.edu">Department of Electrical Engineering</a><br>
+								<!-- <strong>Class Website:</strong>
+									<a href="https://edblogs.columbia.edu/eecs4764-001-2019-3/">Columbia University EECS E4764 Fall '22 IoT</a></br> -->
+								<strong>Instructor:</strong> <a href="http://fredjiang.com/">Professsor Xiaofan (Fred) Jiang</a>
+							</p>
+
+
+							<!-- <form method="post" action="#">
+								<div class="row">
+									<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>
+									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="12u$">
+										<textarea name="message" placeholder="Message"></textarea>
+									</div>
+									<div class="12u$">
+										<input type="submit" value="Send Message" />
+									</div>
+								</div>
+							</form> -->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; IoT Project | All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
